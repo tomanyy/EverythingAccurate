@@ -1,0 +1,209 @@
+body {
+  margin: 0;
+  font-family: 'Gotham', sans-serif;
+  background-color: #e5e5e5;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  background-color: #0074bd;
+  color: white;
+  padding: 10px 20px;
+  height: 50px;
+}
+
+.logo img {
+  height: 32px;
+  margin-right: 20px;
+}
+
+.nav-links a {
+  color: white;
+  margin-right: 15px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.search-bar {
+  margin-left: auto;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 2px;
+}
+
+.user-info {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #f2f2f2;
+  height: 100%;
+  padding-top: 20px;
+  float: left;
+  border-right: 1px solid #ccc;
+}
+
+.sidebar-item {
+  padding: 10px 20px;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+}
+
+.sidebar-item:hover {
+  background-color: #ddd;
+}
+
+.sidebar-item .label {
+  flex-grow: 1;
+}
+
+.sidebar-item .badge {
+  background-color: #0074bd;
+  color: white;
+  border-radius: 10px;
+  padding: 2px 6px;
+  font-size: 11px;
+  margin-left: auto;
+}
+
+.sidebar-item.upgrade {
+  background-color: #29aae2;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 4px;
+  margin: 10px 20px;
+}
+
+.main-content {
+  margin-left: 200px;
+  padding: 40px;
+  background-color: #d1d1d1;
+  min-height: calc(100vh - 50px);
+  color: #222;
+}
+
+.main-content h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.user-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.user-header .avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+}
+
+.user-badges {
+  background-color: #0074bd;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.friend-list,
+.game-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.friend,
+.game {
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 100px;
+  text-align: center;
+}
+
+.see-all {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0074bd;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.section-row {
+  display: flex;
+  gap: 20px;
+}
+
+.feed,
+.news {
+  flex: 1;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.feed-post,
+.news-post {
+  margin-top: 10px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.feed input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.feed button {
+  margin-top: 10px;
+  background-color: #0074bd;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.friend {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;     
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 100px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.friend-avatar {
+  width: 90px;        
+  height: 90px;
+  border-radius: 6px;
+  object-fit: cover;
+  margin-bottom: 5px;  
+}
