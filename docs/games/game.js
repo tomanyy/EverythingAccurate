@@ -1,26 +1,31 @@
-function getGameIdFromURL() {
-  const params = new URLSearchParams(window.location.search);
-  return params.get('id');
+function getGameId() {
+  return new URLSearchParams(window.location.search).get('id');
 }
-
-const gameId = getGameIdFromURL();
 
 fetch('games.json')
   .then(res => res.json())
-  .then(data => {
-    const game = data.find(g => g.gameId === gameId);
+  .then(games => {
+    const game = games.find(g => g.gameId === getGameId());
+    const container = document.getElementById('game-container');
+
     if (!game) {
-      document.getElementById('game-details').innerText = 'Game not found.';
+      container.innerHTML = "<p>Game not found.</p>";
       return;
     }
 
-    document.getElementById('game-details').innerHTML = `
-      <h1>${game.name}</h1>
-      <img src="${game.image}" width="300" height="200">
-      <p><strong>Description:</strong> ${game.description}</p>
-      <p><strong>Created:</strong> ${game.created}</p>
-      <p><strong>Time Period:</strong> ${game.time}</p>
-      <p><strong>Creator:</strong> ${game.creator}</p>
-      <a class="play-button" href="https://www.roblox.com/games/start?placeId=5846386835&launchData=${game.gameId}">Play</a>
+    container.innerHTML = `
+      <div class="game-detail">
+        <div class="game-preview">
+          <img src="${game.image}" alt="${game.name}">
+        </div>
+        <div class="game-info">
+          <h1>${game.name}</h1>
+          <p><strong>By:</strong> ${game.creator}</p>
+          <p><strong>Created:</strong> ${game.created}</p>
+          <p><strong>Time Period:</strong> ${game.time}</p>
+          <p>${game.description}</p>
+          <a class="play-button" href="https://www.roblox.com/games/start?placeId=5846386835&launchData=${game.gameId}">Play</a>
+        </div>
+      </div>
     `;
   });
