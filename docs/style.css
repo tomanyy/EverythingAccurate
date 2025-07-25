@@ -275,3 +275,89 @@ body {
   font-weight: bold;
   font-size: 14px;
 }
+
+.game-page {
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.game-header {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.game-banner {
+  width: 400px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.game-info {
+  flex: 1;
+}
+
+.game-info h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.game-creator {
+  color: gray;
+  margin: 5px 0 15px;
+}
+
+.play-button {
+  display: inline-block;
+  background-color: #00b06b;
+  color: white;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.game-stats {
+  margin-top: 10px;
+  font-size: 14px;
+  display: flex;
+  gap: 15px;
+  color: #444;
+  align-items: center;
+}
+
+.vote-bar {
+  width: 200px;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 3px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.like-bar {
+  height: 100%;
+  background-color: #00b06b;
+}
+
+.game-tabs {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+.tab {
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: default;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid #00b06b;
+}
+
+.game-description p {
+  margin: 10px 0;
+}
