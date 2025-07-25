@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Game</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
 <body>
   <div class="topbar">
     <div class="logo">
@@ -26,19 +33,58 @@
   </div>
 
   <div class="main-content">
-    <!-- your game list or game details will go here -->
-  </div>
-</body>
-<html>
-<head>
-  <title>Game Details</title>
-  <link rel="stylesheet" href="../style.css" />
-</head>
-<body>
-  <div class="main-content">
-    <div id="game-container">Loading...</div>
+    <div id="game-container">Loading game...</div>
   </div>
 
-  <script src="game.js"></script>
+  <script>
+    function getGameId() {
+      return new URLSearchParams(window.location.search).get('id');
+    }
+
+    fetch('games.json')
+      .then(res => res.json())
+      .then(games => {
+        const game = games.find(g => g.gameId === getGameId());
+        const container = document.getElementById('game-container');
+
+        if (!game) {
+          container.innerHTML = "<p>Game not found.</p>";
+          return;
+        }
+
+        container.innerHTML = `
+          <div class="game-page">
+            <div class="game-header">
+              <img class="game-banner" src="${game.image}" alt="${game.name}">
+              <div class="game-info">
+                <h1>${game.name}</h1>
+                <p class="game-creator">By ${game.creator}</p>
+                <a class="play-button" href="https://www.roblox.com/games/start?placeId=5846386835&launchData=${game.gameId}">Play</a>
+                <div class="game-stats">
+                  ⭐ <span>122k</span>
+                  👍 <span>14,764</span>
+                  👎 <span>1,550</span>
+                  🔗 <span>Share</span>
+                </div>
+                <div class="vote-bar">
+                  <div class="like-bar" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="game-tabs">
+              <div class="tab">About</div>
+              <div class="tab">Developer Store</div>
+              <div class="tab">Leaderboards</div>
+              <div class="tab">Game Instances</div>
+            </div>
+            <div class="game-description">
+              <p><strong>Description:</strong> ${game.description}</p>
+              <p><strong>Created:</strong> ${game.created}</p>
+              <p><strong>Time Period:</strong> ${game.time}</p>
+            </div>
+          </div>
+        `;
+      });
+  </script>
 </body>
 </html>
