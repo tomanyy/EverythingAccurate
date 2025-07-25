@@ -207,3 +207,28 @@ body {
   object-fit: cover;
   margin-bottom: 5px;  /* Add spacing between avatar and username */
 }
+
+.game-card {
+  background-color: white;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 300px;
+}
+
+.game-card img {
+  border-radius: 4px;
+}
+
+.play-button {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #0074bd;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
